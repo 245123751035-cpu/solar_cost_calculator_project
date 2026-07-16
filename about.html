@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>About Solar Power</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { background: #0a0f1a; }
+
+  .about-hero {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: -50px auto 0;
+    padding: 40px 35px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+  }
+
+  .about-content h1 {
+    text-align: center;
+    color: #e0f2f1;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .about-content h1 span {
+    color: #4dd0e1;
+  }
+
+  .about-image {
+    width: 100%;
+    border-radius: 14px;
+    margin: 20px 0;
+    border: 1px solid rgba(77, 208, 225, 0.15);
+  }
+
+  .about-text {
+    color: #b0bec5;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 20px 0;
+  }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .stat-card {
+    background: rgba(77, 208, 225, 0.06);
+    border: 1px solid rgba(77, 208, 225, 0.12);
+    border-radius: 14px;
+    padding: 20px 25px;
+    text-align: center;
+    min-width: 150px;
+  }
+
+  .stat-card .number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4dd0e1;
+  }
+
+  .stat-card .label {
+    color: #80cbc4;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+  }
+
+  footer {
+    background: linear-gradient(135deg, #004d40, #00796b);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.95rem;
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+
+<img src="about.png" class="about-hero">
+
+<div class="about-content">
+  <h1>Solar <span>Energy</span> in India</h1>
+
+  <img src="modi.png" class="about-image">
+
+  <p class="about-text">
+    India has set an ambitious target of achieving 500 GW of renewable energy capacity by 2030, 
+    with solar energy playing a crucial role. The country's abundant sunshine, declining solar costs, 
+    and supportive government policies have created an ideal environment for solar adoption.
+  </p>
+
+  <p class="about-text">
+    With over 300 sunny days per year in most regions, India receives solar irradiance of 4-7 kWh/m²/day, 
+    making it one of the best countries globally for solar energy generation.
+  </p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="number">500 GW</div>
+      <div class="label">2030 Target</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">300+</div>
+      <div class="label">Sunny Days/Year</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">4-7</div>
+      <div class="label">kWh/m²/Day</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Built for a greener future</p>
+</footer>
+
+</body>
+</html>

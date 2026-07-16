@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Solar Process</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { background: #0a0f1a; }
+
+  .proc-header {
+    text-align: center;
+    padding: 40px 20px 10px;
+  }
+
+  .proc-header h1 {
+    color: #e0f2f1;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .proc-header h1 span {
+    color: #4dd0e1;
+  }
+
+  .proc-header p {
+    color: #80cbc4;
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+
+  .steps {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .step-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(77, 208, 225, 0.12);
+  }
+
+  .step-card img {
+    width: 100%;
+    display: block;
+  }
+
+  .step-number {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, #4dd0e1, #00897b);
+    color: #0a0f1a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  footer {
+    background: linear-gradient(135deg, #004d40, #00796b);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.95rem;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="proc-header">
+  <h1>How It <span>Works</span></h1>
+  <p>Step-by-step guide to going solar</p>
+</div>
+
+<div class="steps">
+  <div class="step-card"><span class="step-number">Step 1</span><img src="process1.png"></div>
+  <div class="step-card"><span class="step-number">Step 2</span><img src="process2.png"></div>
+  <div class="step-card"><span class="step-number">Step 3</span><img src="process3.png"></div>
+  <div class="step-card"><span class="step-number">Step 4</span><img src="process4.png"></div>
+  <div class="step-card"><span class="step-number">Step 5</span><img src="process5.png"></div>
+  <div class="step-card"><span class="step-number">Step 6</span><img src="process6.png"></div>
+</div>
+
+<footer>
+  <p>Built for a greener future</p>
+</footer>
+
+</body>
+</html>

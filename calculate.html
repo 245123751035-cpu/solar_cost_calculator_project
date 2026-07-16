@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>Solar ROI Calculator</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    background: #0a0f1a;
+    min-height: 100vh;
+  }
+
+  .calc-hero {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
+  }
+
+  .calc-container {
+    max-width: 550px;
+    margin: -60px auto 40px;
+    padding: 35px 30px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    position: relative;
+  }
+
+  .calc-title {
+    text-align: center;
+    color: #e0f2f1;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .calc-title span {
+    color: #4dd0e1;
+  }
+
+  .input-group {
+    margin-bottom: 18px;
+    position: relative;
+  }
+
+  .input-group label {
+    display: block;
+    color: #80cbc4;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(77, 208, 225, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .input-group input:focus {
+    border-color: #4dd0e1;
+    box-shadow: 0 0 15px rgba(77, 208, 225, 0.15);
+  }
+
+  .input-group input::placeholder {
+    color: rgba(255,255,255,0.25);
+  }
+
+  .calc-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #0a0f1a;
+    background: linear-gradient(135deg, #4dd0e1, #00897b);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+
+  .calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(77, 208, 225, 0.35);
+  }
+
+  .results-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(77, 208, 225, 0.06);
+    border: 1px solid rgba(77, 208, 225, 0.12);
+    border-radius: 14px;
+    text-align: center;
+    display: none;
+  }
+
+  .results-box.show {
+    display: block;
+    animation: fadeUp 0.4s ease;
+  }
+
+  .results-box h4 {
+    color: #4dd0e1;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  .result-item {
+    color: #e0f2f1;
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .result-item span {
+    color: #4dd0e1;
+    font-weight: 700;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  footer {
+    background: linear-gradient(135deg, #004d40, #00796b);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.95rem;
+  }
+</style>
+</head>
+<body>
+
+<img src="solar2.png" class="calc-hero">
+
+<div class="calc-container">
+  <div class="calc-title">Solar <span>ROI</span> Calculator</div>
+
+  <div class="input-group">
+    <label>Monthly Energy Consumption (kWh)</label>
+    <input type="number" id="cons" placeholder="e.g. 300">
+  </div>
+
+  <div class="input-group">
+    <label>Solar Panel Cost (₹)</label>
+    <input type="number" id="sol" placeholder="e.g. 50000">
+  </div>
+
+  <div class="input-group">
+    <label>Installation Fee (₹)</label>
+    <input type="number" id="inst" placeholder="e.g. 10000">
+  </div>
+
+  <div class="input-group">
+    <label>Government Rebate (₹)</label>
+    <input type="number" id="reb" placeholder="e.g. 5000">
+  </div>
+
+  <div class="input-group">
+    <label>Electricity Rate (₹/kWh)</label>
+    <input type="number" id="rat" placeholder="e.g. 8">
+  </div>
+
+  <button class="calc-btn" onclick="myfun()">Calculate</button>
+
+  <div class="results-box" id="resultsBox">
+    <h4>Your Results</h4>
+    <div class="result-item" id="Sav">Monthly Savings: ₹0</div>
+    <div class="result-item" id="roi">ROI: 0%</div>
+  </div>
+</div>
+
+<footer>
+  <p>Built for a greener future</p>
+</footer>
+
+<script>
+function myfun() {
+  var cons = parseFloat(document.getElementById("cons").value);
+  var sol = parseFloat(document.getElementById('sol').value);
+  var instal = parseFloat(document.getElementById("inst").value);
+  var reb = parseFloat(document.getElementById("reb").value);
+  var rat = parseFloat(document.getElementById("rat").value);
+
+  var sav = cons * rat;
+  var roi = (sav * 12 / (sol + instal - reb)) * 100;
+
+  document.getElementById("Sav").innerHTML = "Monthly Savings: <span>₹" + sav.toFixed(0) + "</span>";
+  document.getElementById("roi").innerHTML = "ROI: <span>" + roi.toFixed(1) + "%</span>";
+  document.getElementById("resultsBox").classList.add("show");
+}
+</script>
+</body>
+</html>

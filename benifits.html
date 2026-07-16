@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Solar Benefits</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { background: #0a0f1a; }
+
+  .ben-header {
+    text-align: center;
+    padding: 40px 20px 10px;
+  }
+
+  .ben-header h1 {
+    color: #e0f2f1;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .ben-header h1 span {
+    color: #4dd0e1;
+  }
+
+  .ben-header p {
+    color: #80cbc4;
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+
+  .gallery {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .gallery-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(77, 208, 225, 0.12);
+  }
+
+  .gallery-card img {
+    width: 100%;
+    display: block;
+  }
+
+  footer {
+    background: linear-gradient(135deg, #004d40, #00796b);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.95rem;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="ben-header">
+  <h1>Why Go <span>Solar</span>?</h1>
+  <p>Discover the advantages of switching to solar energy</p>
+</div>
+
+<div class="gallery">
+  <div class="gallery-card"><img src="benefits.png"></div>
+  <div class="gallery-card"><img src="benefits2.png"></div>
+  <div class="gallery-card"><img src="benefits3.png"></div>
+  <div class="gallery-card"><img src="benefits4.png"></div>
+</div>
+
+<footer>
+  <p>Built for a greener future</p>
+</footer>
+
+</body>
+</html>
