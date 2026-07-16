@@ -2,7 +2,7 @@
   "version": 2,
   "outputDirectory": ".",
   "routes": [
-    { "src": "/$", "dest": "/first.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/$", "destination": "/first.html" },
+    { "src": "/(.*)", "destination": "/$1" }
   ]
 }
