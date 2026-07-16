@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "outputDirectory": ".",
   "routes": [
-    { "src": "/$", "destination": "/first.html" },
-    { "src": "/(.*)", "destination": "/$1" }
+    { "src": "/$", "destination": "/first.html" }
   ]
 }
